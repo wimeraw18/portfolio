@@ -34,6 +34,17 @@ figure {
   padding: 0;
   z-index: -3;
 }
+
+figcaption {
+  text-align: left;
+  line-height: 1.75rem;
+}
+figcaption ul {
+  padding-left: 17px;
+}
+figcaption span {
+  font-weight: bold;
+}
 /* NAVIGATION STYLES */
 #site-title {
   display: flex;
