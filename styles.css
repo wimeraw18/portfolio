@@ -1,0 +1,444 @@
+/*
+1. Turn off hover rules for project cards on mobile screens
+2. make contact logos block display on mobile screens
+3. background color of project section
+4. descriptions of projects
+5. About me section
+5. real images I took as photographs
+
+
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  background-color: #fff8dc;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+#header-content-wrapper,
+#projects-wrapper {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+#projects-wrapper {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+/* REMOVE PADDING AND MARGINS FROM FIGURE TAGS */
+figure {
+  margin: 0;
+  padding: 0;
+  z-index: -3;
+}
+/* NAVIGATION STYLES */
+#site-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #040404;
+}
+.logo {
+  width: 64px;
+  max-width: 64px;
+  height: auto;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+/* make fcc logo green */
+#fcc-logo {
+  background-color: #006400;
+}
+
+#codepen-logo {
+  background-color: white;
+}
+.contact-link {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.logo:hover {
+  box-shadow: #040404 0px 0px 20px 0px;
+  transform: scale(1.25);
+}
+#main-title {
+  font-family: "Lato", sans-serf;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-shadow: #fffff0 0px 0px 18px;
+  margin: 0px;
+  display: inline-block;
+  position: relative;
+}
+#main-title:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  bottom: -15px;
+  left: 25%;
+  border-bottom: 1px solid #040404;
+}
+#projects-title {
+  display: inline-block;
+  position: relative;
+}
+#projects-title:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  bottom: -15px;
+  left: 25%;
+  border-bottom: 1px solid #040404;
+}
+.card img {
+  border: 1px solid #040404;
+}
+#main-subtitle {
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+.brand a {
+  text-decoration: none;
+  color: #fffff0;
+  font-family: "Charmonman", sans-serif;
+}
+
+#main-header {
+  background-color: #040404;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
+
+#navbar {
+  width: 100%;
+  animation-name: slidein;
+  animation-duration: 0.5s;
+  background-color: #040404;
+}
+
+.brand {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  transform: scale(1.1);
+}
+
+#main-nav {
+  text-align: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#main-nav li {
+  border-top: 1px solid #040404;
+  padding: 10px;
+}
+
+#main-nav a[href="#contact"] li {
+  border-bottom: 40px solid #040404;
+}
+
+#main-nav a[href="#about"] li {
+  border-top: none;
+}
+
+#main-nav a {
+  text-decoration: none;
+  color: #fffff0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#nav-button {
+  background-color: #040404;
+  color: #fffff0;
+  border: 1px solid #040404;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0;
+  outline: transparent;
+  height: 100%;
+}
+
+/* NAVIGATION ANIMATION */
+@keyframes slidein {
+  from {
+    padding-left: 100%;
+  }
+  to {
+    padding-left: 0;
+  }
+}
+@keyframes slideout {
+  from {
+    padding-left: 0;
+  }
+  to {
+    padding-left: 100%;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+/* NAVIGATION HOVER RULES */
+#main-nav li:hover,
+#nav-button:hover {
+  background-color: #fffff0;
+  color: #040404;
+  border-color: transparent;
+  transform: scale(1.1);
+  transition: 0.3s all ease;
+}
+
+/* WELCOME SECTION */
+
+/* hero image */
+#welcome-section {
+  background-image: url("images/beach_clouds_daytime_olXaI.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+#overlay {
+  background: linear-gradient(0deg, #040404, 25%, transparent);
+  opacity: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#welcome-wrapper,
+#contact-content-wrapper {
+  z-index: 3;
+}
+#contact-content-wrapper {
+  color: #fffff0;
+  z-index: 1;
+  position: absolute;
+}
+#contact-title {
+  display: inline-block;
+  position: relative;
+}
+#contact-title:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  bottom: -15px;
+  left: 25%;
+  border-bottom: 1px solid #fffff0;
+}
+#projects {
+  padding: 50px 0px;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+}
+
+#contact {
+  background-image: url("images/fog-forest-hd-wallpaper-113727.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.contact-link a {
+  margin: 25px;
+}
+#overlay2 {
+  background: linear-gradient(0deg, transparent, 25%, #040404);
+  opacity: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+/* responsive images */
+.resp-image {
+  max-width: 100%;
+}
+
+/* hire me button */
+#hire-me {
+  background-color: #040404;
+  color: #fffff0;
+  padding: 20px;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid #040404;
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+
+#hire-me:hover {
+  background-color: #fffff0;
+  color: #040404;
+  transform: scale(1.1);
+  box-shadow: #040404 0px 0px 20px 0px;
+}
+/* add margin between card rows */
+.card {
+  margin-top: 50px;
+}
+
+/* add hover rule to project snapshots */
+.card:hover {
+  transform: scale(1.1) !important;
+}
+.card img:hover {
+  border: 1px solid #040404;
+  box-shadow: #040404 0px 0px 20px 0px;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 678px) {
+  /****************** START TYPE SCALE ******************/
+  html {
+    font-size: 1em;
+  }
+
+  p {
+    margin-bottom: 1.3em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 1.414em 0 0.5em;
+    font-weight: inherit;
+    line-height: 1.2;
+  }
+
+  h1 {
+    margin-top: 0;
+    font-size: 3.157em;
+  }
+
+  h2 {
+    font-size: 2.369em;
+  }
+
+  h3 {
+    font-size: 1.777em;
+  }
+
+  h4 {
+    font-size: 1.333em;
+  }
+
+  small,
+  .font_small {
+    font-size: 0.75em;
+  }
+
+  /****************** END TYPE SCALE ******************/
+  /* hide the navigation bars on large screens */
+  #nav-button {
+    display: none;
+  }
+
+  /* show the nav-bar on large screens */
+  .hide {
+    display: block;
+  }
+
+  /* create a flex container for the main nav on large screens*/
+  #main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* turn the header into a flex container on large screens */
+  #header-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  #projects-wrapper {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* remove space beneath contact link on large screens*/
+  #main-nav a[href="#contact"] li {
+    border-bottom: none;
+  }
+
+  /* create three card layout for large screens */
+  #project-tiles {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    max-width: 320px;
+    margin-top: 1rem;
+  }
+
+  #hire-me {
+    max-width: 200px;
+    padding: 10px 20px;
+  }
+}
+
+/* PULSE ANIMATION */
+/*
+@keyframes pulse {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  50% {
+    -webkit-transform: translate(0, 10px);
+    transform: translate(0, 10px);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+*/
