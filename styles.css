@@ -287,8 +287,6 @@ figcaption span {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 .contact-link a {
   margin: 25px;
@@ -357,6 +355,10 @@ figcaption span {
   }
   #navbar {
     border-bottom: solid 1px #fffff0;
+  }
+  #contact {
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 }
 
