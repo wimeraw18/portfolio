@@ -215,7 +215,7 @@ figcaption span {
 #main-nav li:hover {
   background-color: #fffff0;
   color: #040404;
-  border-color: transparent;
+  border-color: 1px solid #fffff0;
   transition: 0.3s all ease;
 }
 
@@ -287,6 +287,8 @@ figcaption span {
   flex-direction: column;
   justify-content: center;
   position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .contact-link a {
   margin: 25px;
@@ -337,6 +339,25 @@ figcaption span {
 }
 
 /* MEDIA QUERIES */
+
+/* extra small screens */
+@media (max-width: 325px) {
+  #welcome-section,
+  #contact {
+    color: #fffff0;
+    background-color: #040404;
+    background-image: none;
+  }
+  #hire-me {
+    color: #040404;
+    background-color: #fffff0;
+  }
+  #main-title {
+    text-shadow: none;
+  }
+}
+
+/* medium screens and up */
 @media (min-width: 678px) {
   /****************** START TYPE SCALE ******************/
   html {
