@@ -355,6 +355,9 @@ figcaption span {
   #main-title {
     text-shadow: none;
   }
+  #navbar {
+    border-bottom: solid 1px #fffff0;
+  }
 }
 
 /* medium screens and up */
