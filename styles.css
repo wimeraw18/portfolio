@@ -212,8 +212,7 @@ figcaption span {
 }
 
 /* NAVIGATION HOVER RULES */
-#main-nav li:hover,
-#nav-button:hover {
+#main-nav li:hover {
   background-color: #fffff0;
   color: #040404;
   border-color: transparent;
