@@ -1,13 +1,8 @@
-/*
-1. Turn off hover rules for project cards on mobile screens
-2. make contact logos block display on mobile screens
-3. background color of project section
-4. descriptions of projects
-5. About me section
-5. real images I took as photographs
-
-
-*/
+/* mobile first */
+html {
+  width: 100%;
+  height: 100%;
+}
 
 body {
   margin: 0;
@@ -19,16 +14,244 @@ body {
   line-height: 1.45;
 }
 
+/********** START HEADER STYLES **********/
+
+#main-header {
+  background-color: #000;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  margin: 0 auto !important;
+}
+
 #header-content-wrapper,
 #projects-wrapper {
-  max-width: 1040px;
   margin: 0 auto;
 }
+
+#site-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #000;
+}
+
+.brand {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  transform: scale(1.1);
+}
+
+.brand a {
+  text-decoration: none;
+  color: rgb(255, 252, 243);
+  font-family: "Charmonman", sans-serif;
+}
+
+#nav-button {
+  background-color: #000;
+  color: rgb(255, 252, 243);
+  border: 1px solid #000;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0;
+  outline: transparent;
+  height: 100%;
+}
+
+#navbar {
+  width: 100%;
+  animation-name: slidein;
+  animation-duration: 0.5s;
+  background-color: #000;
+}
+
+#main-nav {
+  text-align: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#main-nav a {
+  text-decoration: none;
+  color: rgb(255, 252, 243);
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#main-nav a[href="#about"] li {
+  border-top: none;
+}
+
+#main-nav a[href="#contact"] li {
+  border-bottom: 40px solid #000;
+}
+
+#main-nav li {
+  border-top: 1px solid #000;
+  padding: 10px;
+}
+
+/* NAVIGATION HOVER RULES */
+#main-nav li:hover {
+  background-color: rgb(255, 252, 243);
+  color: #000;
+  border-color: 1px solid rgb(255, 252, 243);
+  transition: 0.3s all ease;
+}
+
+/********** END HEADER STYLES **********/
+
+/********** START HERO SECTION STYLES **********/
+
+#welcome-section {
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+#overlay {
+  background: linear-gradient(0deg, #000, 25%, transparent);
+  opacity: 0.6;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+#welcome-wrapper {
+  z-index: 3;
+  margin: 0 auto;
+  color: rgb(255, 252, 243);
+  padding-top: 25vh;
+}
+
+#main-title {
+  font-family: "Lato", sans-serf;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin: 0px;
+  display: inline-block;
+  position: relative;
+}
+
+/* white line */
+#main-title:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  bottom: -15px;
+  left: 25%;
+  border-bottom: 1px solid #000;
+}
+
+#main-subtitle {
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+#hire-me {
+  background-color: #000;
+  color: rgb(255, 252, 243);
+  padding: 20px;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-right: 1px solid rgb(255, 252, 243);
+  border-left: 1px solid rgb(255, 252, 243);
+  border-top: none;
+  border-bottom: none;
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+
+#hire-me:hover {
+  background-color: rgb(255, 252, 243);
+  color: #000;
+  transform: scale(1.1);
+  box-shadow: #000 0px 0px 20px 0px;
+}
+
+.headshot {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/********** END HERO SECTION STYLES **********/
+
+/********** START PROJECTS SECTION STYLES **********/
+
 #projects-wrapper {
   padding-left: 2%;
   padding-right: 2%;
+  max-width: 1040px;
+  margin: 0 auto;
 }
-/* REMOVE PADDING AND MARGINS FROM FIGURE TAGS */
+
+#projects {
+  padding: 50px 0px;
+  width: 80%;
+  text-align: center;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#projects-title {
+  display: inline-block;
+  position: relative;
+}
+
+#projects-title:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  bottom: -15px;
+  left: 25%;
+  border-bottom: 1px solid #000;
+}
+
+/* add margin between card rows */
+.card {
+  margin-top: 50px;
+}
+
+/* add hover rule to project snapshots */
+.card:hover {
+  transform: scale(1.1) !important;
+  z-index: 5;
+}
+
+.card img {
+  border: 1px solid #000;
+}
+
+.card img:hover {
+  border: 1px solid #000;
+  box-shadow: #000 0px 0px 20px 0px;
+}
+
+/* responsive images */
+.resp-image {
+  max-width: 100%;
+}
+
+/* remove padding and margins from figure tags */
 figure {
   margin: 0;
   padding: 0;
@@ -39,37 +262,68 @@ figcaption {
   text-align: left;
   line-height: 1.75rem;
 }
+
 figcaption ul {
   padding-left: 17px;
 }
+
 figcaption span {
   font-weight: bold;
 }
-/* NAVIGATION STYLES */
-#site-title {
+
+/********** END PROJECTS SECTION STYLES **********/
+
+/********** START CONTACT SECTION STYLES **********/
+
+#contact {
+  background-color: #000;
+  background-image: url("images/headshots-28a.jpg");
+  background-size: contain;
+  background-position: -160px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* #overlay2 {
+  background: linear-gradient(0deg, transparent, 25%, #000);
+  opacity: 1;
+  position: absolute;
   width: 100%;
-  background-color: #040404;
-}
-.logo {
-  width: 64px;
-  max-width: 64px;
-  height: auto;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  display: block;
+  height: 100%;
+} */
+
+#contact-content-wrapper {
+  color: rgb(255, 252, 243);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-/* make fcc logo green */
-#fcc-logo {
-  background-color: #006400;
+#contact-title {
+  display: inline-block;
+  position: relative;
 }
 
-#codepen-logo {
-  background-color: white;
+#contact-title:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  bottom: -15px;
+  left: 25%;
+  border-bottom: 1px solid rgb(255, 252, 243);
 }
+
 .contact-link {
   display: flex;
   justify-content: space-around;
@@ -79,129 +333,72 @@ figcaption span {
   flex-wrap: wrap;
 }
 
+.contact-link a {
+  margin: 25px;
+}
+
+.logo {
+  width: 64px;
+  max-width: 64px;
+  height: auto;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: block;
+}
+
 .logo:hover {
-  box-shadow: #040404 0px 0px 20px 0px;
+  box-shadow: #000 0px 0px 20px 0px;
   transform: scale(1.25);
 }
-#main-title {
-  font-family: "Lato", sans-serf;
-  font-weight: bold;
-  letter-spacing: 4px;
-  text-shadow: #fffff0 0px 0px 18px;
-  margin: 0px;
-  display: inline-block;
-  position: relative;
-}
-#main-title:after {
-  content: "";
-  position: absolute;
-  width: 50%;
-  height: 1px;
-  bottom: -15px;
-  left: 25%;
-  border-bottom: 1px solid #040404;
-}
-#projects-title {
-  display: inline-block;
-  position: relative;
-}
-#projects-title:after {
-  content: "";
-  position: absolute;
-  width: 50%;
-  height: 1px;
-  bottom: -15px;
-  left: 25%;
-  border-bottom: 1px solid #040404;
-}
-.card img {
-  border: 1px solid #040404;
-}
-#main-subtitle {
-  margin-bottom: 1.5rem;
-  font-style: italic;
-}
-.brand a {
-  text-decoration: none;
-  color: #fffff0;
-  font-family: "Charmonman", sans-serif;
+
+#codepen-logo {
+  background-color: white;
 }
 
-#main-header {
-  background-color: #040404;
-  width: 100%;
-  position: fixed;
-  z-index: 10;
-  top: 0;
+/* make fcc logo green */
+#fcc-logo {
+  background-color: #006400;
 }
 
-#navbar {
-  width: 100%;
-  animation-name: slidein;
-  animation-duration: 0.5s;
-  background-color: #040404;
-}
+/********** END CONTACT SECTION STYLES **********/
 
-.brand {
+/********** START FOOTER SECTION STYLES **********/
+
+.footer-text {
   text-align: center;
-  padding: 0;
-  margin: 0;
-  transform: scale(1.1);
-}
-
-#main-nav {
-  text-align: center;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-#main-nav li {
-  border-top: 1px solid #040404;
-  padding: 10px;
-}
-
-#main-nav a[href="#contact"] li {
-  border-bottom: 40px solid #040404;
-}
-
-#main-nav a[href="#about"] li {
-  border-top: none;
-}
-
-#main-nav a {
-  text-decoration: none;
-  color: #fffff0;
-  display: block;
+  font-size: 12px;
   width: 100%;
-  padding: 0;
+  color: rgb(255, 252, 243);
+  background-color: black;
   margin: 0;
+  padding: 5px;
 }
 
-#nav-button {
-  background-color: #040404;
-  color: #fffff0;
-  border: 1px solid #040404;
-  cursor: pointer;
-  padding: 10px;
+#email,
+#phone {
+  font-size: 1em;
   margin: 0;
-  outline: transparent;
-  height: 100%;
+  padding: 0;
 }
+
+/********** END FOOTER SECTION STYLES **********/
 
 /* NAVIGATION ANIMATION */
 @keyframes slidein {
   from {
     padding-left: 100%;
   }
+
   to {
     padding-left: 0;
   }
 }
+
 @keyframes slideout {
   from {
     padding-left: 0;
   }
+
   to {
     padding-left: 100%;
   }
@@ -211,159 +408,74 @@ figcaption span {
   display: none;
 }
 
-/* NAVIGATION HOVER RULES */
-#main-nav li:hover {
-  background-color: #fffff0;
-  color: #040404;
-  border-color: 1px solid #fffff0;
-  transition: 0.3s all ease;
+.black-bg {
+  background-color: #000 !important;
+  border-bottom: 2px solid rgb(255, 252, 243) !important;
 }
 
-/* WELCOME SECTION */
-
-/* hero image */
-#welcome-section {
-  background-image: url("images/beach_clouds_daytime_olXaI.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  width: 100vw;
-  height: 100vh;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
-#overlay {
-  background: linear-gradient(0deg, #040404, 25%, transparent);
-  opacity: 1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-#welcome-wrapper,
-#contact-content-wrapper {
-  z-index: 3;
-}
-#contact-content-wrapper {
-  color: #fffff0;
-  z-index: 1;
-  position: absolute;
-}
-#contact-title {
-  display: inline-block;
-  position: relative;
-}
-#contact-title:after {
-  content: "";
-  position: absolute;
-  width: 50%;
-  height: 1px;
-  bottom: -15px;
-  left: 25%;
-  border-bottom: 1px solid #fffff0;
-}
-#projects {
-  padding: 50px 0px;
-  width: 100%;
-  text-align: center;
-  height: 100%;
-}
-
-#contact {
-  background-image: url("images/fog-forest-hd-wallpaper-113727.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  width: 100vw;
-  height: 100vh;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
-.contact-link a {
-  margin: 25px;
-}
-#overlay2 {
-  background: linear-gradient(0deg, transparent, 25%, #040404);
-  opacity: 1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-/* responsive images */
-.resp-image {
-  max-width: 100%;
-}
-
-/* hire me button */
-#hire-me {
-  background-color: #040404;
-  color: #fffff0;
-  padding: 20px;
-  width: 100%;
-  font-weight: bold;
-  text-transform: uppercase;
-  border: 1px solid #040404;
-  cursor: pointer;
-  transition: 0.3s all ease;
-}
-
-#hire-me:hover {
-  background-color: #fffff0;
-  color: #040404;
-  transform: scale(1.1);
-  box-shadow: #040404 0px 0px 20px 0px;
-}
-/* add margin between card rows */
-.card {
-  margin-top: 50px;
-}
-
-/* add hover rule to project snapshots */
-.card:hover {
-  transform: scale(1.1) !important;
-}
-.card img:hover {
-  border: 1px solid #040404;
-  box-shadow: #040404 0px 0px 20px 0px;
-}
-
-/* MEDIA QUERIES */
+/********** START MEDIA QUERIES **********/
 
 /* extra small screens */
-@media (max-width: 325px) {
-  #welcome-section,
-  #contact {
-    color: #fffff0;
-    background-color: #040404;
-    background-image: none;
+@media all and (max-width: 325px) {
+  #welcome-wrapper {
+    padding-top: 15vh;
   }
-  #hire-me {
-    color: #040404;
-    background-color: #fffff0;
-  }
-  #main-title {
-    text-shadow: none;
-  }
+
   #navbar {
-    border-bottom: solid 1px #fffff0;
-  }
-  #contact {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    border-bottom: solid 1px rgb(255, 252, 243);
   }
 }
 
+/*********** START LANDSCAPE MODE MEDIA QUERIES ***********/
+
+@media all and (min-width: 500px) and (max-width: 600px) and (orientation: landscape) {
+  #welcome-section,
+  #contact {
+    height: 600px !important;
+  }
+
+  .headshot {
+    width: 83%;
+  }
+}
+
+@media all and (min-width: 601px) and (max-width: 700px) and (orientation: landscape) {
+  #welcome-section,
+  #contact {
+    height: 700px !important;
+  }
+
+  .headshot {
+    width: 83%;
+  }
+}
+
+@media all and (min-width: 701px) and (max-width: 800px) and (orientation: landscape) {
+  #welcome-section,
+  #contact {
+    height: 800px !important;
+  }
+
+  .headshot {
+    width: 90%;
+  }
+}
+
+@media all and (min-width: 801px) and (max-width: 900px) and (orientation: landscape) {
+  #welcome-section,
+  #contact {
+    height: 900px !important;
+  }
+
+  .headshot {
+    width: 90%;
+  }
+}
+
+/*********** END LANDSCAPE MODE MEDIA QUERIES ***********/
+
 /* medium screens and up */
-@media (min-width: 678px) {
+@media all and (min-width: 768px) {
   /****************** START TYPE SCALE ******************/
   html {
     font-size: 1em;
@@ -405,6 +517,86 @@ figcaption span {
   }
 
   /****************** END TYPE SCALE ******************/
+
+  #site-title {
+    flex-direction: row-reverse;
+  }
+
+  #navbar,
+  #site-title,
+  #main-header {
+    background-color: transparent;
+  }
+
+  .brand {
+    visibility: hidden;
+  }
+
+  #welcome-section {
+    background-image: url("images/headshots-13a.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 25% 75%;
+  }
+
+  #overlay {
+    display: block;
+  }
+
+  .headshot {
+    display: none;
+  }
+
+  #welcome-wrapper {
+    margin-left: 3%;
+  }
+
+  /* create three card layout for large screens */
+  #project-tiles {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  #projects {
+    padding: 50px 0px;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+  }
+
+  .card {
+    width: 41%;
+    margin-top: 1rem;
+  }
+
+  #hire-me {
+    max-width: 200px;
+    padding: 10px 20px;
+  }
+}
+
+/* large screens and up */
+@media all and (min-width: 1024px) {
+  .brand {
+    visibility: visible;
+  }
+
+  /* turn the header into a flex container on large screens */
+  #header-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding-left: 20px;
+  }
+
+  #site-title {
+    flex-direction: row;
+  }
+
   /* hide the navigation bars on large screens */
   #nav-button {
     display: none;
@@ -422,58 +614,84 @@ figcaption span {
     justify-content: space-between;
   }
 
-  /* turn the header into a flex container on large screens */
-  #header-content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
+  #navbar {
+    max-width: 33.33%;
   }
 
-  #projects-wrapper {
-    max-width: 1040px;
-    margin: 0 auto;
-    padding-left: 0;
-    padding-right: 0;
-  }
   /* remove space beneath contact link on large screens*/
   #main-nav a[href="#contact"] li {
     border-bottom: none;
   }
 
-  /* create three card layout for large screens */
-  #project-tiles {
-    display: flex;
-    justify-content: space-between;
-    align-items: top;
-    flex-wrap: wrap;
+  .headshot {
+    display: none;
+  }
+
+  #welcome-section {
+    background-image: url("images/headshots-13a.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  #welcome-wrapper {
+    margin-left: 4%;
   }
 
   .card {
-    max-width: 320px;
-    margin-top: 1rem;
+    width: 29%;
   }
 
-  #hire-me {
-    max-width: 200px;
-    padding: 10px 20px;
+  #contact {
+    background-position: left;
   }
 }
 
-/* PULSE ANIMATION */
-/*
-@keyframes pulse {
-  0% {
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
+@media all and (min-width: 1280px) {
+  #welcome-section {
+    background-size: contain;
+    background-position: 200px;
   }
-  50% {
-    -webkit-transform: translate(0, 10px);
-    transform: translate(0, 10px);
+
+  #welcome-wrapper {
+    margin-left: 17%;
   }
-  100% {
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
+
+  #project-tiles {
+    justify-content: space-between;
   }
 }
-*/
+
+@media all and (min-width: 1900px) {
+  #welcome-section {
+    background-size: contain;
+    background-position: 66.66%;
+  }
+
+  #header-content-wrapper {
+    padding: 0 17%;
+  }
+
+  #welcome-wrapper {
+    margin-left: 21%;
+  }
+
+  #contact {
+    background-position: 17%;
+  }
+}
+
+@media all and (min-width: 2400px) {
+  #welcome-section {
+    background-size: contain;
+    background-position: 400px;
+  }
+
+  #header-content-wrapper {
+    padding: 0 17%;
+  }
+
+  #welcome-wrapper {
+    margin-left: 29%;
+  }
+}

@@ -2,93 +2,29 @@ const menuButton = document.querySelector("#nav-button");
 const navbar = document.querySelector("#navbar");
 const email = document.querySelector("#email");
 const phone = document.querySelector("#phone");
-const icon = document.querySelector("button");
 const close = document.querySelector(".fa-times");
 const bars = document.querySelector(".fa-bars");
+const mainHeader = document.querySelector("#main-header");
+const hero = document.getElementById("welcome-section");
+const styleChangeLocation = hero.offsetHeight - 50;
 
+// SHOW AND HIDE NAVBAR ON BUTTON CLICK
 menuButton.addEventListener("click", function() {
   navbar.classList.toggle("hide");
   bars.classList.toggle("hide");
   close.classList.toggle("hide");
+  mainHeader.classList.toggle("black-bg");
 });
 
-email.innerHTML = "<h3>wimeraw18@gmail.com</h3>";
-phone.innerHTML = "<h3>608-960-2211</h3>";
-
-/* FIX CHROME VIEWPORT HEIGHT BUG ON MOBILE SCREENS */
-var VHChromeFix = function(selectors) {
-  var self = this;
-  var userAgent = navigator.userAgent.toLowerCase();
-  var isAndroidChrome = /chrome/.test(userAgent) && /android/.test(userAgent);
-  var isIOSChrome = /crios/.test(userAgent);
-
-  if (isAndroidChrome || isIOSChrome) {
-    // If we detected Chrome on Android or iOS
-    // Cache elements and trigger fix on init
-    this.getElements(selectors);
-    this.fixAll();
-
-    // Cache window dimensions
-    this.windowWidth = window.innerWidth;
-    this.windowHeight = window.innerHeight;
-
-    window.addEventListener("resize", function() {
-      // Both width and height changed (orientation change)
-      // This is a hack, as Android when eyboard pops up
-      // Triggers orientation change
-      if (
-        self.windowWidth !== window.innerWidth &&
-        self.windowHeight !== window.innerHeight
-      ) {
-        self.windowWidth = window.innerWidth;
-        self.windowHeight = window.innerHeight;
-        self.fixAll();
-      }
-    });
+// CHANGE HEADER BG COLOR TO BLACK ON SCROLL
+function changeHeaderStyle() {
+  if (window.pageYOffset > styleChangeLocation) {
+    mainHeader.style.backgroundColor = "black";
+  } else {
+    mainHeader.style.backgroundColor = "transparent";
   }
+}
+
+window.onscroll = function() {
+  changeHeaderStyle();
 };
-
-VHChromeFix.prototype.getElements = function(selectors) {
-  this.elements = [];
-  // Convert selectors to array if they are not
-  selectors = this.isArray(selectors) ? selectors : [selectors];
-
-  for (var i = 0; i < selectors.length; i++) {
-    // Get all elements for selector
-    var selector = selectors[i].selector;
-    var elements = document.querySelectorAll(selector);
-
-    // Go through all elements for one selector to filter them
-    for (var j = 0; j < elements.length; j++) {
-      this.elements.push({
-        domElement: elements[j],
-        vh: selectors[i].vh
-      });
-    }
-  }
-};
-
-VHChromeFix.prototype.isArray = function(array) {
-  return Object.prototype.toString.call(array) === "[object Array]";
-};
-
-VHChromeFix.prototype.fixAll = function() {
-  for (var i = 0; i < this.elements.length; i++) {
-    var element = this.elements[i];
-    element.domElement.style.height =
-      (window.innerHeight * element.vh) / 100 + "px";
-  }
-};
-
-var options = [
-  {
-    selector: "#welcome-section", // Mandatory, CSS selector
-    vh: 100 // Mandatory, height in vh units
-  },
-  {
-    selector: "#contact",
-    vh: 100
-  }
-];
-
-var vhFix = new VHChromeFix(options);
