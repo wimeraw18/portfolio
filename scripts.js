@@ -32,19 +32,52 @@ window.onscroll = function () {
 // Projects Section
 var pardotButton = document.querySelector('.pardot-button');
 var pardotProjects = document.querySelector('#pardotProjectTiles');
-pardotButton.onclick = function () {
-  pardotProjects.style.display = 'block';
-  pardotButton.style.transform = 'scale(1.5)';
-  sfProjects.style.display = 'none';
-  sfButton.style.transform = 'scale(1)';
-
-}
-
 var sfButton = document.querySelector('.salesforce-button');
 var sfProjects = document.querySelector('#sfProjectTiles');
-sfButton.onclick = function () {
-  sfProjects.style.display = 'block';
-  sfButton.style.transform = 'scale(1.5)';
-  pardotProjects.style.display = 'none';
-  pardotButton.style.transform = 'scale(1)';
+
+var opacity = 0;
+var intervalId = 0;
+function fadeOut() {
+  intervalId = setInterval(hide(), 20);
 }
+function hide() {
+  opacity = Number(window.getComputedStyle(pardotProjects).getPropertyValue('opactiy'));
+  if (opacity > 0) {
+    opacity = opacity - 0.1;
+    pardotProjects.style.opacity = opacity;
+  } else {
+    clearInterval(intervalId);
+  }
+}
+
+pardotButton.addEventListener('click', function () {
+  pardotProjects.classList.replace('hide-projects', 'show-projects');
+  pardotButton.classList.add('active');
+  sfProjects.classList.replace('show-projects', 'hide-projects');
+  sfButton.classList.remove('active')
+
+});
+
+sfButton.addEventListener('click', function () {
+  //sfProjects.classList.add('show-projects');
+  pardotProjects.classList.replace('show-projects', 'hide-projects');
+  pardotButton.classList.remove('active');
+  sfProjects.classList.replace('hide-projects', 'show-projects');
+  sfButton.classList.add('active');
+});
+
+// pardotButton.onclick = function () {
+//   pardotProjects.style.display = 'block';
+//   pardotButton.style.transform = 'scale(1.5)';
+//   sfProjects.style.display = 'none';
+//   sfButton.style.transform = 'scale(1)';
+
+// }
+
+
+// sfButton.onclick = function () {
+//   sfProjects.style.display = 'block';
+//   sfButton.style.transform = 'scale(1.5)';
+//   pardotProjects.style.display = 'none';
+//   pardotButton.style.transform = 'scale(1)';
+// }

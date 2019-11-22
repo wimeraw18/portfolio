@@ -327,6 +327,12 @@ figcaption span {
   padding: 5px 0px;
 }
 
+.show-projects {
+  display: block !important;
+}
+.hide-projects {
+  display: none !important;
+}
 
 /********** END PROJECTS SECTION STYLES **********/
 
@@ -468,7 +474,7 @@ figcaption span {
 
 .button-wrapper {
   display: Flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 button.button {
@@ -479,9 +485,10 @@ button.button {
   color: #fff;
   outline: 0;
   cursor: pointer;
+  margin: 2%;
 }
 
-button.button:focus {
+button.active {
   background: transparent;
   color: #000;
   outline: 0;
