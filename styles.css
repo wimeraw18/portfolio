@@ -211,9 +211,9 @@ ul {
 /********** END HERO SECTION STYLES **********/
 
 /********** START PROJECTS SECTION STYLES **********/
-#sfProjectTiles {
+/* #sfProjectTiles {
   display: none;
-}
+} */
 #projects-wrapper {
   padding-left: 2%;
   padding-right: 2%;
@@ -265,6 +265,10 @@ ul {
   margin-top: 0px;
 }
 
+.project-description ul:last-of-type {
+  margin-bottom: 0px;
+}
+
 /* add hover rule to project snapshots */
 .card:hover {
   transform: scale(1.05) !important;
@@ -312,7 +316,7 @@ figcaption span {
   justify-content: space-around;
   align-items: flex-start;
   flex-direction: column;
-  padding: 50px 0px;
+  padding: 75px 0px;
 }
 
 .project-description {
@@ -323,16 +327,26 @@ figcaption span {
   font-size: 1.15em;
 }
 
+/* .project-description ul {
+  margin-bottom: 0px;
+} */
+
 .project-description ul li {
   padding: 5px 0px;
 }
 
 .show-projects {
-  display: block !important;
+  display: block;
+  opacity: 1;
+  transition: all .5s ease-in;
 }
 .hide-projects {
-  display: none !important;
+  display: none;
+  opacity: 0;
+  transition: all .5s ease-in;
 }
+
+
 
 /********** END PROJECTS SECTION STYLES **********/
 
@@ -475,6 +489,7 @@ figcaption span {
 .button-wrapper {
   display: Flex;
   justify-content: center;
+  border-bottom: 1px solid black;
 }
 
 button.button {
@@ -485,13 +500,18 @@ button.button {
   color: #fff;
   outline: 0;
   cursor: pointer;
-  margin: 2%;
+  margin: 2% 2% -1px 2%;
+  transition: all .2s ease-in;
 }
 
 button.active {
-  background: transparent;
+  background: #fff8dc;
   color: #000;
   outline: 0;
+  transition: all .2s ease-in;
+  margin-bottom:-1px;
+  z-index: 2;
+  border-bottom: 1px solid #fff8dc;
 }
 
 /* .#000-bg {
@@ -561,10 +581,17 @@ button.active {
 
 /*********** END LANDSCAPE MODE MEDIA QUERIES ***********/
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 767px) {
   .project-description:nth-child(odd) {
       order: 2;
-      padding: 50px 0px 0px 0px;
+  }
+  .project-description {
+    padding: 12% 0px 0px 0px;
+    margin: 0 auto;
+  }
+
+  .project-description h4 {
+    text-align: center;
   }
 }
 
@@ -668,6 +695,14 @@ button.active {
     max-width: 200px;
     padding: 10px 20px;
   }
+
+  button.active {
+    transform: scale(1.2);
+    margin-bottom: 4px;
+  }
+  button.button {
+    margin: 2% 2% 4px 2%;
+  }
 }
 
 
@@ -751,9 +786,9 @@ button.active {
     margin-left: 17%;
   }
 
-  #pardotProjectTiles {
+  /* #pardotProjectTiles {
     justify-content: space-between;
-  }
+  } */
 }
 
 @media all and (min-width: 1900px) {

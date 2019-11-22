@@ -35,20 +35,20 @@ var pardotProjects = document.querySelector('#pardotProjectTiles');
 var sfButton = document.querySelector('.salesforce-button');
 var sfProjects = document.querySelector('#sfProjectTiles');
 
-var opacity = 0;
-var intervalId = 0;
-function fadeOut() {
-  intervalId = setInterval(hide(), 20);
-}
-function hide() {
-  opacity = Number(window.getComputedStyle(pardotProjects).getPropertyValue('opactiy'));
-  if (opacity > 0) {
-    opacity = opacity - 0.1;
-    pardotProjects.style.opacity = opacity;
-  } else {
-    clearInterval(intervalId);
-  }
-}
+// var opacity = 0;
+// var intervalId = 0;
+// function fadeOut() {
+//   intervalId = setInterval(hide(), 20);
+// }
+// function hide() {
+//   opacity = Number(window.getComputedStyle(pardotProjects).getPropertyValue('opactiy'));
+//   if (opacity > 0) {
+//     opacity = opacity - 0.1;
+//     pardotProjects.style.opacity = opacity;
+//   } else {
+//     clearInterval(intervalId);
+//   }
+// }
 
 pardotButton.addEventListener('click', function () {
   pardotProjects.classList.replace('hide-projects', 'show-projects');
