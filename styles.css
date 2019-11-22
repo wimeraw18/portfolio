@@ -248,10 +248,9 @@ ul {
   overflow: hidden;
 }
 
-/* add margin between card rows */
-/* .card {
-  margin-top: 50px;
-} */
+.card {
+  margin: 0 auto;
+}
 
 .card h3 {
   margin: 0px 0px 20px 0px;
