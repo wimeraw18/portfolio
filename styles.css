@@ -248,10 +248,6 @@ ul {
   overflow: hidden;
 }
 
-.card {
-  margin: 0 auto;
-}
-
 .card h3 {
   margin: 0px 0px 20px 0px;
 }
@@ -591,6 +587,9 @@ button.active {
 
   .project-description h4 {
     text-align: center;
+  }
+  .card {
+    margin: 0 auto;
   }
 }
 
