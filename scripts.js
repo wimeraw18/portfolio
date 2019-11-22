@@ -9,7 +9,7 @@ const hero = document.getElementById("welcome-section");
 const styleChangeLocation = hero.offsetHeight - 50;
 
 // SHOW AND HIDE NAVBAR ON BUTTON CLICK
-menuButton.addEventListener("click", function() {
+menuButton.addEventListener("click", function () {
   navbar.classList.toggle("hide");
   bars.classList.toggle("hide");
   close.classList.toggle("hide");
@@ -25,6 +25,26 @@ function changeHeaderStyle() {
   }
 }
 
-window.onscroll = function() {
+window.onscroll = function () {
   changeHeaderStyle();
 };
+
+// Projects Section
+var pardotButton = document.querySelector('.pardot-button');
+var pardotProjects = document.querySelector('#pardotProjectTiles');
+pardotButton.onclick = function () {
+  pardotProjects.style.display = 'block';
+  pardotButton.style.transform = 'scale(1.5)';
+  sfProjects.style.display = 'none';
+  sfButton.style.transform = 'scale(1)';
+
+}
+
+var sfButton = document.querySelector('.salesforce-button');
+var sfProjects = document.querySelector('#sfProjectTiles');
+sfButton.onclick = function () {
+  sfProjects.style.display = 'block';
+  sfButton.style.transform = 'scale(1.5)';
+  pardotProjects.style.display = 'none';
+  pardotButton.style.transform = 'scale(1)';
+}

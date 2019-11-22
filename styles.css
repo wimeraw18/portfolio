@@ -14,6 +14,22 @@ body {
   line-height: 1.45;
 }
 
+hr {
+  border: 1px solid #c6c0bb;
+}
+ul {
+  list-style: none; /* Remove default bullets */
+}
+
+#projects ul li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #c6c0bb; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
 /********** START HEADER STYLES **********/
 
 #main-header {
@@ -195,7 +211,9 @@ body {
 /********** END HERO SECTION STYLES **********/
 
 /********** START PROJECTS SECTION STYLES **********/
-
+#sfProjectTiles {
+  display: none;
+}
 #projects-wrapper {
   padding-left: 2%;
   padding-right: 2%;
@@ -225,25 +243,43 @@ body {
   left: 25%;
   border-bottom: 1px solid #000;
 }
+#sfProjectTiles figure {
+  max-height: 725px;
+  overflow: hidden;
+}
 
 /* add margin between card rows */
-.card {
+/* .card {
   margin-top: 50px;
+} */
+
+.card h3 {
+  margin: 0px 0px 20px 0px;
+}
+
+.project-description h4 {
+  margin-top: 0px;
+}
+
+.project-description ul:first-of-type {
+  margin-top: 0px;
 }
 
 /* add hover rule to project snapshots */
 .card:hover {
-  transform: scale(1.1) !important;
+  transform: scale(1.05) !important;
   z-index: 5;
 }
 
 .card img {
-  border: 1px solid #000;
+  border: 1px solid #aaa;
+  transition: all linear .25s;
 }
 
 .card img:hover {
-  border: 1px solid #000;
-  box-shadow: #000 0px 0px 20px 0px;
+  border: 1px solid #aaa;
+  box-shadow: #666 0px 0px 20px 0px;
+  transition: all linear .25s;
 }
 
 /* responsive images */
@@ -259,7 +295,7 @@ figure {
 }
 
 figcaption {
-  text-align: left;
+  text-align: center;
   line-height: 1.75rem;
 }
 
@@ -270,6 +306,27 @@ figcaption ul {
 figcaption span {
   font-weight: bold;
 }
+
+.project-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 50px 0px;
+}
+
+.project-description {
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  align-self: flex-start;
+  font-size: 1.15em;
+}
+
+.project-description ul li {
+  padding: 5px 0px;
+}
+
 
 /********** END PROJECTS SECTION STYLES **********/
 
@@ -369,7 +426,7 @@ figcaption span {
   font-size: 16px;
   width: 100%;
   color: rgb(255, 252, 243);
-  background-color: black;
+  background-color: #000;
   margin: 0;
   padding: 5px;
 }
@@ -408,10 +465,32 @@ figcaption span {
   display: none;
 }
 
-.black-bg {
+
+.button-wrapper {
+  display: Flex;
+  justify-content: space-between;
+}
+
+button.button {
+  width: 200px;
+  border: 1px solid black;
+  height: 50px;
+  background-color: #000;
+  color: #fff;
+  outline: 0;
+  cursor: pointer;
+}
+
+button.button:focus {
+  background: transparent;
+  color: #000;
+  outline: 0;
+}
+
+/* .#000-bg {
   background-color: #000 !important;
   border-bottom: 2px solid rgb(255, 252, 243) !important;
-}
+} */
 
 /********** START MEDIA QUERIES **********/
 
@@ -472,7 +551,15 @@ figcaption span {
   }
 }
 
+
 /*********** END LANDSCAPE MODE MEDIA QUERIES ***********/
+
+@media all and (max-width: 768px) {
+  .project-description:nth-child(odd) {
+      order: 2;
+      padding: 50px 0px 0px 0px;
+  }
+}
 
 /* medium screens and up */
 @media all and (min-width: 768px) {
@@ -553,12 +640,6 @@ figcaption span {
   }
 
   /* create three card layout for large screens */
-  #project-tiles {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
 
   #projects {
     padding: 50px 0px;
@@ -567,9 +648,13 @@ figcaption span {
     height: 100%;
   }
 
+  .project-wrapper {
+    flex-direction: row;
+  }
+
   .card {
     width: 41%;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
   }
 
   #hire-me {
@@ -577,6 +662,8 @@ figcaption span {
     padding: 10px 20px;
   }
 }
+
+
 
 /* large screens and up */
 @media all and (min-width: 1024px) {
@@ -639,7 +726,7 @@ figcaption span {
   }
 
   .card {
-    width: 29%;
+    width: 45%;
   }
 
   #contact {
@@ -657,7 +744,7 @@ figcaption span {
     margin-left: 17%;
   }
 
-  #project-tiles {
+  #pardotProjectTiles {
     justify-content: space-between;
   }
 }
